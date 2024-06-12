@@ -12,6 +12,14 @@
         <h1>EmailSending</h1>
         {% csrf_token %}
         <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">emailsender</label>
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">passwordsender</label>
+            <input name="password" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Subject</label>
           <input name="subject" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
