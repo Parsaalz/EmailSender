@@ -2,7 +2,12 @@ from django.shortcuts import render
 from django.core.mail import EmailMessage
 from django.http import HttpResponse
 password=["bjgpyykfvowtuuiq",]
-emailname=""
+emailname=[]
+
+def set_emailname(email):
+    emailname.append(email)
+
+
 def mainpage(request):
     if request.method=="POST":
         subject_t=request.POST.get('subject')
@@ -27,7 +32,7 @@ def email_name():
 
 def get_password():
     print(password[0])
-    return str(password[0])
+    return password[0]
 
 get_password()
 #'bjgpyykfvowtuuiq '

@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import LoginForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login
+from sendingemailapp.views import set_emailname
 def login_page(request):
     fr=LoginForm()
     if request.method=="POST":
@@ -12,6 +13,9 @@ def login_page(request):
             user=authenticate(request,username=username_t,password=password_t)
             if user is not None:
                 login(request,user)
+                s=User.objects.get(username=request.user)
+                print(s.email)
+                set_emailname(s.email)
                 return redirect('mainpage')
     context={
         "fr":fr,
