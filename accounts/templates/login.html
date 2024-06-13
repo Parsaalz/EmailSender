@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form style="width:500px" method="post">
+            <h1>Login</h1>
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Username</label>
+                {{fr.username}}
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Password</label>
+                {{fr.password}}
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </center>
+</body>
+</html>
